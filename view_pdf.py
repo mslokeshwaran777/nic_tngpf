@@ -4,6 +4,10 @@ import io
 
 app = Flask(__name__)
 
+@app.route('/')
+def welcome():
+    return 'Welcome to my Website'
+
 @app.route('/get_pdf', methods=['GET'])
 def get_pdf():
 
@@ -22,4 +26,4 @@ def get_pdf():
     return send_file(io.BytesIO(pdf_content), as_attachment=True, download_name='output.pdf', mimetype='application/pdf')
 
 if __name__ == '__main__':
-    app.run(host='http://0.0.0.0',debug=False,port=5050)
+    app.run()
