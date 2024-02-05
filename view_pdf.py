@@ -26,4 +26,4 @@ def get_pdf():
     return send_file(io.BytesIO(pdf_content), as_attachment=True, download_name='output.pdf', mimetype='application/pdf')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='http://0.0.0.0')
